@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="/static/Tailwind/tailwind.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/static/css/flipStyle.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flipStyle.css') }}">
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/company-bg.jpeg') }}')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1 class="font-bold">Companies</h1>
+                        <span class="subheading">This page is contains information of all types of companies which are come in the college campus for placement </span>
+                        <br> <br>
+                        <h2 class="subheading">Search Any company</h2>
+                        <form id="bookSearch" name="bookSearch" action="/companyGallery" method="post">
+                            <div class="searchBar">
+                                <div class="searchBox">
+                                        <input type="text" class="searchText" name="search" placeholder="Type to search any company..">
+                                        <button class="searchBtn" type="submit">
+                                            <i class="fas fa-search fa-3x" style="width: 40px; height: 40px;"></i>
+                                        </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font">
+        <h1 class="font-bold text-center" style="font-size: 80px; font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;"> 
+            Companies
+        </h1>
+
+            <div class="container px-5 py-24 mx-auto">
+
+                <div class="flex flex-wrap -m-4">
+                    {% for company in companies %}
+                        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="../static/assets/companyImg/{{company.company_img}}" alt="company_image" class="object-cover object-center w-full h-full block">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <a href="{{company.company_url}}" target="_blank"> <button class="linkButton"> {{company.company_name}} </button> </a>
+                                        <a href="{{company.company_career_url}}" target="_blank"> <button class="linkButton"> {{company.company_name}} Career </button> </a>
+                                        <a href="{{company.company_linkedin_url}}" target="_blank"> <button class="linkButton"> {{company.company_name}} LinkedIn </button> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{company.company_cat}}</h3>
+                                <h2 class="text-gray-900 title-font text-lg font-medium"> <a href="/post/{{company.company_name}}"> {{company.company_name}}</h2></a>
+                                <p class="mt-1">₹ {{company.company_ctc}}</p>
+                            </div>
+                        </div>
+                            
+                    {% endfor %}
+                </div>
+            </div>
+
+    </section>
+{% endblock %}

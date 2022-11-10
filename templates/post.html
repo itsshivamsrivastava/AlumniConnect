@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <link href="/static/Tailwind/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/flipStyle.css') }}">
+        <!-- Page Header-->
+        {%set fname = 'assets/img/' + post.img_file %}
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+        <!-- <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/about-bg.jpg') }}')"> -->
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="post-heading">
+                            <h1 class="font-bold">{{post.tittle}}</h1>
+                            <h2 class="subheading">{{post.tagline}}</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Admin</a>
+                                on {{post.date}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        {{post.content|safe}}
+                    </div>
+                </div>
+            </div>
+        </article>
+        <hr class="m-10">
+        <section class="text-gray-600 body-font">
+            <h1 class="m-10 font-bold text-center" style="font-size: 60px; font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;"> 
+                Placed Students
+            </h1>
+    
+                <div class="container px-5 py-24 mx-auto">
+    
+                    <div class="flex flex-wrap -m-4">
+                        {% for company in companies %}
+                            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="../static/assets/companyImg/{{company.company_img}}" alt="company_image" class="object-cover object-center w-full h-full block">
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <a href="{{company.company_url}}" target="_blank"> <button class="linkButton"> {{company.company_name}} </button> </a>
+                                            <a href="{{company.company_career_url}}" target="_blank"> <button class="linkButton"> {{company.company_name}} Career </button> </a>
+                                            <a href="{{company.company_linkedin_url}}" target="_blank"> <button class="linkButton"> {{company.company_name}} LinkedIn </button> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{company.company_cat}}</h3>
+                                    <h2 class="text-gray-900 title-font text-lg font-medium"> <a href="/post/{{company.company_name}}"> {{company.company_name}}</h2></a>
+                                    <p class="mt-1">₹ {{company.company_ctc}}</p>
+                                </div>
+                            </div> 
+                        {% endfor %}
+                    </div>
+                </div>
+    
+        </section>
+{% endblock %}

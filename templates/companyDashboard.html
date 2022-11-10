@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <link rel="stylesheet" href="/static/css/companyDashboard.css">
+	<!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="page-heading">
+                            <h1>Company Dashboard</h1>
+                            <span class="subheading">Manage your posts and change them</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-11 col-md-10 mx-auto">
+
+                    <h1>Basic Actions</h1>
+
+                        <a href="/edit/0"><button class="buttonStyle btn btn-outline-primary">Add a new post</button></a>
+                        <a href="/companyEdit/0"><button class="buttonStyle btn btn-outline-primary">Add a new Company</button></a>
+                        <a href="/dashboard"><button class="buttonStyle btn btn-outline-primary">Dashboard</button></a>
+                        <a href="/alumniDashboard"><button class="buttonStyle btn btn-outline-primary">Alumni Dashboard</button></a>
+                        <a href="/logout"><button class="buttonStyle btn btn-outline-primary">Logout</button></a>
+                        <hr>
+                    <br>
+                    <h1>Edit Companies</h1> <br>
+
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                              {% for category, message in messages %}
+                                 <div class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+                              {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
+                	<table class="table">
+                        <thead>
+                          <tr>
+                            <th>Company Id.</th>
+                            <th>Company Name</th>
+                            <th>Company Category</th>
+                            <th>Company CTC</th>
+                            <th>Company Image</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for company in companies %}
+                              <tr>
+                                  <td>{{company.company_id}}</td>
+                                  <td>{{company.company_name}}</td>
+                                  <td>{{company.company_cat}}</td>
+                                  <td>{{company.company_ctc}}</td>
+                                  <td>{{company.company_img}}</td>
+                                  <td><a href="/companyEdit/{{company.company_id}}"><button class="buttonStyle btn btn-outline-primary">Edit</button></a></td>
+                                  <td><a href="/companyDelete/{{company.company_id}}"><button class="buttonStyle btn btn-outline-primary">Delete</button></a></td>
+                              </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        {% endblock %}

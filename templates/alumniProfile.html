@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<link href="{{ url_for('static', filename='css/alumniProfile.css') }}" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/dashboard.css">
+
+<section style="background-image: url('{{ url_for('static', filename='assets/img/header1.webp') }}')">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="navbar-profile rounded-3 p-3 mb-4">
+                    <ul class="navbar-ul navbar-nav ml-auto">
+                        <!-- Profile icon font awesome -->
+                        <li class="nav-item"><a href="/alumniProfile" type="button" class="btn btn-primary ms-1">
+                            <span class="profile-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </span> Profile</a>
+                        </li>
+
+                        <li class="nav-item"><a href="/" type="button" class="btn btn-primary ms-1">
+                            <!-- Signout icon font awesome -->
+                            <span class="profile-icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </span> Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card-style card mb-4">
+                    <div class="card-body text-center">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                            alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{params['alumni_name']}}</h5>
+                        <p class="text-muted mb-1">Strategic Cloud Engineer</p>
+                        <p class="text-muted mb-4">Bengaluru, Karnataka, India</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button type="button" class="btn btn-primary">Follow</button>
+                            <a href="https://www.linkedin.com/in/shr0hit/?originalSubdomain=in" target="_blank" type="button" class="btn btn-outline-primary ms-1"><i class="fab fa-linkedin"></i>
+                                LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-style card mb-4 mb-md-0">
+                    <div class="card-body">
+                        <p class="mb-4 text-center text-primary font-italic me-1">Social Media
+                        </p>
+
+                        <ul class="list-group list-group-flush rounded-3">
+                            <p class="mb-0"><a href="https://www.rohansharma.com/" target="_blank" class="mb-0"><i
+                                        class="fas fa-globe fa-lg text-warning"></i> &nbsp;Rohan Sharma's portfolio</a>
+                            </p>
+
+                            <p class="mb-0"><a href="https://www.github,com/rohansharma12" target="_blank"
+                                    class="mb-0"><i class="fab fa-github fa-lg" style="color: #333333;"></i> &nbsp;
+                                    @rohansharma12</a></p>
+
+                            <p class="mb-0"><a href="twitter.com/rohansharma_12" class="mb-0"><i
+                                        class="fab fa-twitter fa-lg" style="color: #55acee;"></i> &nbsp;
+                                    @rohansharma_12</a></p>
+
+                            <p class="mb-0"><a href="instagram.com/rohansharma" class="mb-0"><i
+                                        class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i> &nbsp;
+                                    @rohansharma</a></p>
+
+                            <p class="mb-0"><a href="facebook.com/rohan_12" class="mb-0"><i
+                                        class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i> &nbsp;
+                                    @rohan_12</a></p>
+
+                            <p class="mb-0"><i class="fab fa-linkedin fa-lg" style="color: #3b5998;"></i> &nbsp; <a
+                                    href="https://www.linkedin.com/in/shr0hit/?originalSubdomain=in">@rohansharma</a>
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card-style card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{params['alumni_name']}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{params['alumni_user']}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Degree</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Master of Computer Applicaion (MCA)</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Company</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Google Inc.</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Location</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Bengaluru, Karnataka, India</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Bio</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="bio-formatting text-muted mb-0">
+                                    An experienced Software Engineer and an RHCA who is passionate about linux and
+                                    building highly scalable/reliable distributed systems.
+                                    Skilled in Software Engineering, Microservices, Design Patterns, Kubernetes, CI/CD,
+                                    Serverless, Public/Private Clouds, Infrastructure and Security.
+                                    Currently working as a Strategic Cloud Engineer at Google.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-style card mb-4 mb-md-0">
+                            <div class="card-body">
+                                <p class="mb-4 text-center"><span class="text-primary font-italic me-1">Assigment</span> Project
+                                    Status
+                                </p>
+                                <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                                <div class="progress rounded" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                                <div class="progress rounded mb-2" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-style card mb-4 mb-md-0">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush rounded-3">
+                                    <p class="mb-4 text-center text-primary font-italic me-1">Training & Certificates
+                                    </p>
+                                    <p class="mb-1" style="font-size: .77rem;">HashiCorp Certified: Terraform Associate
+                                        (002)</p>
+
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">
+                                        Google Cloud Certified Associate Cloud Engineer</p>
+
+                                    <p class="mt-4 mb-1" style="font-size: .77rem;">
+                                        Google Cloud Certified Cloud Digital Leader</p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

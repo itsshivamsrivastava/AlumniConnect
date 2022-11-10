@@ -1,0 +1,6 @@
+.buttonStyle{
+    border-radius: 5rem;
+}
+.header-background{
+    background-image: url('{{url_for("static", filename="assets/img/home-bg.jpg")}}');
+}

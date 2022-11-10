@@ -1,0 +1,31 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/alumniconnect",
+    "prod_uri": "mysql://root:@localhost/alumniconnect",
+    "fb_url": "https://www.facebook.com/alumniconnect",
+    "tw_url": "https://www.twitter.com/alumniconnect",
+    "gh_url": "https://www.github.com/alumniconnect",
+    "blog_name": "AlumniConnect",
+    "tag_line": "Any student can connect with any alumni without sharing your contact details",
+    "gmail-user": "example@email.com",
+    "gmail-password": "your-password",
+    "about_text": "Any student can connect with any alumni without sharing your contact details. If you have any queries, please contact us.",
+    "no_of_posts": 3,
+    "login_image": "login.svg",
+    "admin_user": "admin",
+    "admin_password": "admin",
+    "upload_location": "D:\\AlumniConnect\\static\\assets\\img",
+    "company_upload_location": "D:\\AlumniConnect\\static\\assets\\companyImg",
+    "alumni_pic_upload_location": "D:\\AlumniConnect\\static\\alumniProfilePic",
+    "company_cat": "Java Programming",
+    "website_description": "Our AlumniConnect website is a web-enabled application through which students, and alumni will be able to continuously communicate. \n This website is only for SRMIST Students as well as Alumni.",
+    "alumni_name": "Rohan Sharma",
+    "alumni_user": "rs1234@srmist.edu.in",
+    "alumni_password": "rohan123",
+    "alumni_degree": "B.Tech",
+    "alumni_designation": "Software Engineer",
+    "alumni_company": "Google"
+  }
+}

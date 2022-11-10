@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	<!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="page-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage companies and change them</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+
+                    <h1>Basic Actions</h1>
+
+                        <a href="/companyDashboard"><button class="btn btn-primary">Dashboard Home</button></a>
+                        <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+                        <hr>
+
+                    <h1>Add/Edit Company</h1>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                              {% for category, message in messages %}
+                                 <div class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+                              {% endfor %}
+                            {% endif %}
+                    {% endwith %}
+                	
+                    <form id="contactForm" name="sentMessage" action="/companyEdit/{{company_id}}" method="post" novalidate enctype="multipart/form-data">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Company Name</label>
+                                <input class="form-control" id="name" type="text" placeholder="Company Name" name="name" required data-validation-required-message="Please enter your company name." value="{{company.company_name}}" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Company Category</label>
+                                <input class="form-control" id="category" type="text" placeholder="Company Category" name="category" required data-validation-required-message="Please enter your company category." value="{{company.company_cat}}" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Company Description</label>
+
+                                <textarea class="form-control" id="desc" name="desc" rows="5" placeholder="Company Description" required data-validation-required-message="Please enter the company description.">{{company.company_desc}}</textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                         
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Company URL</label>
+                                <input class="form-control" id="amazonLink" name="companyLink" type="text" placeholder="Company URL" required data-validation-required-message="Please enter the company URL." value="{{company.company_url}}" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Company Career URL</label>
+                                <input class="form-control" id="flipkartLink" name="companyCareerLink" type="text" placeholder="Company Career URL" required data-validation-required-message="Please enter the company careers link." value="{{company.company_career_url}}" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Company LinkedIn URL</label>
+                                <input class="form-control" id="thriftbooksLink" name="companyLinkedinLink" type="text" placeholder="Company LinkedIn URL" required data-validation-required-message="Please enter the Company LinkedIn URL." value="{{company.company_linkedin_url}}" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Company CTC</label>
+                                <input class="form-control" id="bookprice" name="companyctc" type="text" placeholder="Company CTC" required data-validation-required-message="Please enter the company CTC." value="{{company.company_ctc}}" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <input type="file" name="file2" id="file2"/>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Company Image</label>
+                                <input class="form-control" id="bookImage" name="companyImage" placeholder="Upload a company image" value="{{company.company_img}}"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <div id="success"></div>
+                        <button class="btn btn-outline-primary" id="sendMessageButton" type="submit">Submit</button>
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#desc').summernote();
+            });
+        </script>
+
+        {% endblock %}
