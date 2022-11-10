@@ -1,5 +1,8 @@
 # AlumniConnect
 AlumniConnect website created with Python Flask, MySQL, HTML5 & CSS3 and Bootstrap Features use of several data structures for optimization techniques. A full fledged functionality with Modules like home, posts, company, about, contact us, Alumni/current student profile & login/signup and pagination from Database. Responsive layout for extra small, Large Medium devices and browsers (ofcourse).
+
+    This project is under progress.
+
 # How to run project locally
 
 1. Make sure you have MYSQL version 8.0 and above since it uses full text search. 
@@ -10,35 +13,35 @@ AlumniConnect website created with Python Flask, MySQL, HTML5 & CSS3 and Bootstr
 6. On cmd go to root of project
 7. run command "python main.py install"
 
-# Home Page
+# SignUp
 
-![Home](https://user-images.githubusercontent.com/73056786/119680735-13e6de80-be5f-11eb-80af-0964db63e253.PNG)
+![Signup](https://user-images.githubusercontent.com/73056786/201043195-9d26bc88-7a52-4337-90c2-b1d2ff0a1de4.png)
 
-# Pagination
+# SignIn
+![Login](https://user-images.githubusercontent.com/73056786/201043423-1088b076-625f-4229-b0f1-ad4810ce1291.png)
 
-![pagination](https://user-images.githubusercontent.com/73056786/119681585-d0d93b00-be5f-11eb-8632-36e32ae06519.PNG)
+# Home
 
-# Post Section
+![Home](https://user-images.githubusercontent.com/73056786/201044094-90cd8aee-c798-4464-aa53-2cc034a2f146.png)
 
-![post](https://user-images.githubusercontent.com/73056786/119681891-139b1300-be60-11eb-9d93-76774b57a27f.PNG)
+# Company
 
-# Book section 
+![Company](https://user-images.githubusercontent.com/73056786/201045747-fa96f66f-88a3-4431-8ecb-ca51d532f65a.png)
 
-![book](https://user-images.githubusercontent.com/73056786/119682661-b05db080-be60-11eb-8d29-26fcb7cb7d0c.PNG)
 
 # Contact Us Section
 
-![contact us](https://user-images.githubusercontent.com/73056786/119683015-f74ba600-be60-11eb-9495-bf4b5ed34b02.PNG)
+![Contact](https://user-images.githubusercontent.com/73056786/201046144-9c1606b2-a72d-4c49-9a17-83b70904fe61.png)
 
 # Dashboard Login page
 
-![Dashboard login](https://user-images.githubusercontent.com/73056786/119683769-8c4e9f00-be61-11eb-9866-e0c14c0b7de1.PNG)
+![DashboardLogin](https://user-images.githubusercontent.com/73056786/201047533-5c21e5f2-a77e-4e83-bf8a-5eccf791f889.png)
 
 # Dashboard (Admin Pannel) 
 We can Add new posts
 
-![dashboard](https://user-images.githubusercontent.com/73056786/119683886-ad16f480-be61-11eb-9276-d9c5d4ee8fcb.PNG)
+![AdminPannel](https://user-images.githubusercontent.com/73056786/201047024-c1f7d0cb-8cd4-4959-8ca6-bddf2741f625.png)
 
-# Book Dashboard ( Add new books for reference)
+# Company Dashboard ( Add new Companies)
 
-![Book Dashboard](https://user-images.githubusercontent.com/73056786/119684037-ce77e080-be61-11eb-892c-07bb036bf226.PNG)
+![CompanyDashborad](https://user-images.githubusercontent.com/73056786/201047289-6f34490b-f978-4c8c-a3a9-cfb5e0ebba01.png)
