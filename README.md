@@ -1,8 +1,6 @@
 # AlumniConnect
 AlumniConnect website created with Python Flask, MySQL, HTML5 & CSS3 and Bootstrap Features use of several data structures for optimization techniques. A full fledged functionality with Modules like home, posts, company, about, contact us, Alumni/current student profile & login/signup and pagination from Database. Responsive layout for extra small, Large Medium devices and browsers (ofcourse).
 
-    This project is under progress.
-
 # How to run project locally
 
 1. Make sure you have MYSQL version 8.0 and above since it uses full text search. 
